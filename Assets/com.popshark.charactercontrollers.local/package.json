@@ -1,6 +1,6 @@
 {
   "name": "com.popshark.charactercontrollers.local",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "displayName": "Local Character Controllers",
   "description": "Character Controllers for non networked Popshark Games projects",
   "unity": "2020.3",

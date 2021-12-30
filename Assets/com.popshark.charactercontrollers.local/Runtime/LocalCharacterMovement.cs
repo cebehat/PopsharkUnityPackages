@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace Cebt
 {
+    [AddComponentMenu("PopShark/Local/Character Controller")]
     [RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM
     [RequireComponent(typeof(PlayerInput))]

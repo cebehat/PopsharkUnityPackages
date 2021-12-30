@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.NetCode;
 using UnityEngine.InputSystem;
 
+[AddComponentMenu("PopShark/Networked/Character Controller")]
 [RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM
 [RequireComponent(typeof(PlayerInput))]
