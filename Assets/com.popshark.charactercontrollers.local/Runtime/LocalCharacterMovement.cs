@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Netcode;
 using UnityEngine.InputSystem;
 
 namespace Cebt
@@ -62,14 +61,14 @@ namespace Cebt
             Debug.Log("Player connect");
         }
 
-        private IInteractible targettedInteractible = null;
+        //private IInteractible targettedInteractible = null;
         // Update is called once per frame
         void Update()
         {
 
             Look();
             Move();
-            HandleInteractions();
+            //HandleInteractions();
         }
 
         void Look()
@@ -118,36 +117,36 @@ namespace Cebt
             }
         }
 
-        private void HandleInteractions()
-        {
-            LayerMask mask = LayerMask.GetMask("Interactible");
-            RaycastHit hitInfo;
+        //private void HandleInteractions()
+        //{
+        //    LayerMask mask = LayerMask.GetMask("Interactible");
+        //    RaycastHit hitInfo;
 
-            Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+        //    Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
-            if (Physics.Raycast(ray, out hitInfo, 20f) && hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("Interactible"))
-            {
-                var interactible = hitInfo.collider.GetComponent<IInteractible>();
-                if (targettedInteractible != interactible)
-                {
-                    Debug.Log("Hit Interactible: " + hitInfo.collider.name);
-                    interactible.Target(true);
-                    if (targettedInteractible != null)
-                    {
-                        targettedInteractible.Target(false);
-                    }
+        //    if (Physics.Raycast(ray, out hitInfo, 20f) && hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("Interactible"))
+        //    {
+        //        var interactible = hitInfo.collider.GetComponent<IInteractible>();
+        //        if (targettedInteractible != interactible)
+        //        {
+        //            Debug.Log("Hit Interactible: " + hitInfo.collider.name);
+        //            interactible.Target(true);
+        //            if (targettedInteractible != null)
+        //            {
+        //                targettedInteractible.Target(false);
+        //            }
 
-                }
-                targettedInteractible = interactible;
-            }
-            else
-            {
-                if (targettedInteractible != null)
-                {
-                    targettedInteractible.Target(false);
-                    targettedInteractible = null;
-                }
-            }
-        }
+        //        }
+        //        targettedInteractible = interactible;
+        //    }
+        //    else
+        //    {
+        //        if (targettedInteractible != null)
+        //        {
+        //            targettedInteractible.Target(false);
+        //            targettedInteractible = null;
+        //        }
+        //    }
+        //}
     }
 }
