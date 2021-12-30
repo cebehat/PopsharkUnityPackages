@@ -42,24 +42,8 @@ namespace Cebt
         // Start is called before the first frame update
         void Start()
         {
-        }
-
-        void OnTriggerEnter(Collider coll)
-        {
-            if (coll.CompareTag("PlayerCollidable"))
-            {
-                Debug.Log("Player Trigger");
-            }
-        }
-
-        private void OnCollisionEnter(Collision collision)
-        {
-            Debug.Log("Player Collision");
-        }
-
-        private void OnClientConnected(ulong obj)
-        {
-            Debug.Log("Player connect");
+            cameraTransform = GetComponentInChildren<Camera>().transform;
+            characterController = GetComponent<CharacterController>();
         }
 
         //private IInteractible targettedInteractible = null;
@@ -81,11 +65,14 @@ namespace Cebt
                 float xInput = input.x * mouseSensitivity;
                 float yInput = input.y * mouseSensitivity;
 
+                this.transform.Rotate(0, xInput, 0);
+
                 pitch -= yInput;
                 pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
 
                 Quaternion rot = Quaternion.Euler(pitch, 0, 0);
                 cameraTransform.localRotation = rot;
+                
             }
         }
 
