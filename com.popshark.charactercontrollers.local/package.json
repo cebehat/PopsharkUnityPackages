@@ -1,0 +1,25 @@
+{
+  "name": "com.popshark.charactercontrollers.local",
+  "version": "0.0.1",
+  "displayName": "Local Character Controllers",
+  "description": "Character Controllers for non networked Popshark Games projects",
+  "unity": "2020.3",
+  "unityRelease": "15f2",
+  "documentationUrl": "http://www.cebt.dk",
+  "changelogUrl": "http://www.cebt.dk",
+  "licensesUrl": "http://www.cebt.dk",
+  "dependencies": {
+	"com.unity.inputsystem": "1.0.2"
+ },
+ "keywords": [
+    "Character",
+	"Movement",
+	"CharacterMovement",
+	"CharacterControl"
+  ],
+  "author": {
+    "name": "Cebt",
+    "email": "kontakt@cebt.dk",
+    "url": "http://www.cebt.dk"
+  }
+}
